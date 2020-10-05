@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Menu Admin</title>
+<link href="style/fondo.css" rel="stylesheet">
+<style type="text/css">
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+#header {
+	width: 100%;
+	margin: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+ul, ol {
+	list-style: none;
+}
+
+.nav>li {
+	float: left;
+}
+
+.nav li a {
+	background-color: black;
+	color: #fff;
+	text-decoration: none;
+	padding: 10px 12px;
+	display: block;
+}
+
+.nav li ul {
+	display: none;
+	position: absolute;
+	min-width: 100%;
+}
+
+.nav li:hover>ul {
+	display: block;
+}
+
+.nav li ul li {
+	position: relative;
+}
+</style>
+</head>
+<body>
+<h1>Cuaderno de Comunicaciones </h1>
+	<div id="header" style="width: 100%">
+		<ul class="nav">
+			<li><a> Usuarios</a>
+				<ul>
+					<li><form action="AltaUsuario.html" method="post">
+							<input type="submit"
+								style="cursor: pointer; background-color: black; color: white; border-style: none; height: 30px; width: 200px; font-size: 12pt"
+								value="Agregar Usuario" />
+						</form></li>
+					<li><form action="ServletsVerUsuarios" method="post">
+							<input type="submit"
+								style="cursor: pointer; background-color: black; color: white; border-style: none; height: 30px; width: 200px; font-size: 12pt"
+								value="Eliminar Usuario" />
+						</form></li>
+					<li><form action="ServletsConsultarUsuarios" method="post">
+							<input type="hidden" name="opcion" value="1"><input
+								type="submit"
+								style="cursor: pointer; background-color: black; color: white; border-style: none; height: 30px; width: 200px; font-size: 12pt"
+								value="Ver Todos Usuarios" /></input>
+						</form></li>
+					<li><form action="ServletsConsultarUsuarios" method="post">
+							<input type="hidden" name="opcion" value="2"> <input
+								type="submit"
+								style="cursor: pointer; background-color: black; color: white; border-style: none; height: 30px; width: 200px; font-size: 12pt"
+								value="Habilitar/Inhabilitar Usuario" /></input>
+						</form></li>
+
+				</ul>
+
+				<li><a>Reservas</a>
+					<ul>
+						<li><form action="ServletsBuscarTodasReservas" method="post">
+								<input type="submit"
+									style="cursor: pointer; background-color: black; color: white; border-style: none; height: 30px; width: 200px; font-size: 12pt"
+									value="Eliminar Reservas" />
+							</form></li>
+
+					</ul></li>
+					
+			<li><a>Elementos</a>
+					<ul>	
+					<li><form action="AltaTipoElemento.html" method="post">
+									<input type="submit"
+										style="cursor: pointer; background-color: black; color: white; border-style: none; height: 30px; width: 200px; font-size: 12pt"
+										value="Agregar Tipo Elemento" />
+								</form>
+								</li>
+							<li>	<form action="ServletsVerTipoElementos" method="post">
+								<input type="hidden" name="opcion" value="1"></input> <input
+									type="submit"
+									style="cursor: pointer; background-color: black; color: white; border-style: none; height: 30px; width: 200px; font-size: 12pt"
+									value="Eliminar Tipo Elemento" />
+							</form>
+							</li>
+							<li>
+							<form action="ServletsVerTipoElementos" method="post">
+					<input type="hidden" name="opcion" value="3"><input
+						type="submit"
+						style="cursor: pointer; background-color: black; color: white; border-style: none; height: 30px; width: 200px; font-size: 12pt"
+						value="Modificar Tipo Elemento" />
+				</form>
+				</li>
+							<li>
+				<form action="ServletsVerTipoElementos" method="post">
+					<input type="hidden" name="opcion" value="2"><input
+						type="submit"
+						style="cursor: pointer; background-color: black; color: white; border-style: none; height: 30px; width: 200px; font-size: 12pt"
+						value="Agregar Elemento" />
+				</form>
+				</li>
+				<li>				
+
+				<form action="ServletsVerTipoElementos" method="post">
+					<input type="hidden" name="opcion" value="4"><input
+						type="submit"
+						style="cursor: pointer; background-color: black; color: white; border-style: none; height: 30px; width: 200px; font-size: 12pt"
+						value="Eliminar Elemento" />
+				</form>
+				</li>
+				<li>			
+				<form action="ServletsVerTipoElementos" method="post">
+					<input type="hidden" name="opcion" value="5"></input> <input
+						type="submit"
+						style="cursor: pointer; background-color: black; color: white; border-style: none; height: 30px; width: 200px; font-size: 12pt"
+						value="Modificar Elemento" />
+				</form>	
+			</li>
+			
+			</ul></li>
+	</div>
+	<div align="right"
+		style="font-size: 27px; padding-top: 0px; padding-right: 150px;">
+<form action="index.html" method="post">
+		<input type="submit" style="width: 100px; height: 35px;" value="Cerrar Sesion" />
+	</form>
+	</div>
+
+</body>
+</html>
