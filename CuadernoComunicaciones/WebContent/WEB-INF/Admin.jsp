@@ -51,11 +51,18 @@ ul, ol {
 	<div id="header" style="width: 100%">
 		<ul class="nav">
 			<li><a> Usuarios</a>
-				<ul>
+				<ul>	
+				<li><form action="ServletsAltaAlumn" method="post">
+							<input type="submit"
+								style="cursor: pointer; background-color: black; color: white; border-style: none; height: 30px; width: 200px; font-size: 12pt"
+								value="Alta Usuario" />
+						</form></li>		
+				
+					
 					<li><form action="AltaUsuario.html" method="post">
 							<input type="submit"
 								style="cursor: pointer; background-color: black; color: white; border-style: none; height: 30px; width: 200px; font-size: 12pt"
-								value="Agregar Usuario" />
+								value="Alta Usuario" />
 						</form></li>
 					<li><form action="ServletsVerUsuarios" method="post">
 							<input type="submit"

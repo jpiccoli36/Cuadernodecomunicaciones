@@ -5,8 +5,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import Datos.DatosCursos;
 import Datos.DatosUsuarios;
 import Datos.Login;
+import Entidades.Cursos;
 import Entidades.Usuarios;
 
 
@@ -64,6 +66,14 @@ public class ControladorUsuario {
 	public ArrayList<Usuarios> ConsultaTodosUsuarios() {
 		
 		return null;
+	}
+
+
+
+	public ArrayList<Cursos> ConsultaTodosCursos() {
+		DatosCursos dc = new DatosCursos();
+		return dc.ConsultarTodosCursos();
+		
 	}
 
 	}

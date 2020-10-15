@@ -22,6 +22,7 @@ public class FactoryConexion {
 			e.printStackTrace();
 		}
 		
+		
 	}
 	
 	public static FactoryConexion getInstancia(){

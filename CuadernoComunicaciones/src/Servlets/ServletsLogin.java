@@ -29,17 +29,17 @@ public class ServletsLogin extends HttpServlet {
 		per.setContraseña(pass);
 		per.setUsuario(user);
 		ControladorUsuario ctrl = new ControladorUsuario();
-		try {
+		try {		
 			per = ctrl.login(per);
 
-			if (per.getCategoria().equals("admin")) {
+			if (per.getCategoria()==1) {
 
 				request.getSession().setAttribute("user", per);
 				request.getSession().setAttribute("admin", per);
 				request.getRequestDispatcher("WEB-INF/Admin.jsp").forward(request, response);
 			} 
 			else {
-				if ((per.getCategoria().equals("user")))
+				if ((per.getCategoria()==2))
 						{	request.getSession().setAttribute("user", per);
 						request.getSession().setAttribute("usuario", user);
 						request.getSession().setAttribute("categoria", per);
@@ -47,12 +47,18 @@ public class ServletsLogin extends HttpServlet {
 					
 						}
 				else{
+					if((per.getCategoria()==3))
+					{
 					request.getSession().setAttribute("user", per);
 					request.getSession().setAttribute("usuario", user);
 					request.getSession().setAttribute("categoria", per);
 					request.getRequestDispatcher("WEB-INF/Docente.jsp").forward(request, response);
 				} 
-				
+					
+				else{
+					request.getRequestDispatcher("WEB-INF/Error.jsp").forward(request, response);
+				}
+				}
 
 					
 			}

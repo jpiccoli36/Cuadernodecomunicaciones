@@ -23,7 +23,7 @@ public void AltaUsuario(Usuarios u) throws SQLException,Exception {
 			stmt.setString(5, u.getUsuario());
 			stmt.setString(6, u.getContraseña());
 			stmt.setString(7, u.getEmail());
-			stmt.setString(8, u.getCategoria());	
+			stmt.setInt(8, u.getCategoria());	
 			stmt.executeUpdate();						
 		
 			stmt.close();

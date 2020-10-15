@@ -32,7 +32,7 @@ public class ServletsAltaUsuario extends HttpServlet {
 		String Password=request.getParameter("Password");
 		String Domicilio=request.getParameter("Domicilio");
 		String Email=request.getParameter("Email");		
-		String categoria=request.getParameter("Categoria");		
+		int categoria=Integer.parseInt(request.getParameter("Categoria"));		
 		
 	Usuarios u= new Usuarios(); 
 		u.setCategoria(categoria);
