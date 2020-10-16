@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Controlador.ControladorAlumno;
 import Controlador.ControladorUsuario;
 import Entidades.Cursos;
 
@@ -39,10 +40,10 @@ public class ServletsAltaAlumn extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ControladorUsuario cu = new ControladorUsuario();		
+		ControladorAlumno al = new ControladorAlumno();		
 		ArrayList<Cursos> cur= new ArrayList<Cursos>();
-		cur=cu.ConsultaTodosCursos();
-		request.setAttribute("listaCursos", cur=cu.ConsultaTodosCursos());
+		cur=al.ConsultaTodosCursos();
+		request.setAttribute("listaCursos", cur=al.ConsultaTodosCursos());
 		request.getRequestDispatcher("WEB-INF/AltaAlumno.jsp").forward(request, response);
 	}
 

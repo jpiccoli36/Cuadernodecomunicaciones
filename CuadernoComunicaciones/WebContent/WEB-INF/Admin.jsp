@@ -55,11 +55,11 @@ ul, ol {
 				<li><form action="ServletsAltaAlumn" method="post">
 							<input type="submit"
 								style="cursor: pointer; background-color: black; color: white; border-style: none; height: 30px; width: 200px; font-size: 12pt"
-								value="Alta Usuario" />
+								value="Alta Alumno" />
 						</form></li>		
 				
 					
-					<li><form action="AltaUsuario.html" method="post">
+					<li><form action="ServletsAltaUsuario" method="post">
 							<input type="submit"
 								style="cursor: pointer; background-color: black; color: white; border-style: none; height: 30px; width: 200px; font-size: 12pt"
 								value="Alta Usuario" />

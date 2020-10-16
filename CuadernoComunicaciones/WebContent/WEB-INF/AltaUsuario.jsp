@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+     <%@page import="Entidades.Cursos"%>
+    <%@page import="java.util.ArrayList"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -8,35 +12,32 @@
 
 <body>
 <h1>Cuaderno de Comunicaciones </h1>
-	<form name="Agregar Usuario" action="ServletsAltaUsuario" method="post">
-	
-		<label>DNI</label> <input name="DNI" id="DNI" class="form-control"
-			placeholder="DNI" required type="number"> <label>
-			<br />
-				Nombre</label> <input name="Nombre" id="Nombre" class="form-control"
-			placeholder="Nombre"  required type="text"> <label><br /> 
+	<form name="Agregar Usuario" action="ServletsConfirmarAltaUsuario" method="post">
 			Apellido</label> <input
 				name="Apellido" id="Apellido" class="form-control"
 				placeholder="Apellido"  required type="text"> <label><br />
+	
+				Nombre</label> <input name="Nombre" id="Nombre" class="form-control"
+			placeholder="Nombre"  required type="text"> <label><br /> 
+			<label>DNI</label> <input name="DNI" id="DNI" class="form-control"
+			placeholder="DNI" required type="number"> <label>
+			<br />
+			Domicilio</label> <input
+					name="Domicilio" id="Domicilio" class="form-control"
+					placeholder="Domicilio"  required type="text"> <label><br />
+					Email</label> <input
+							name="Email" id="Email" class="form-control" placeholder="Email"  required type="email">
+								<br />
 				 Usuario</label> <input
 					name="Usuario" id="Usuario" class="form-control"
 					placeholder="Usuario"  required type="text"> <label><br />
 					 Password</label> <input
 						name="Password" id="Password" class="form-control"
-						placeholder="Password"  required type="password"> <label><br />
-						Domicilio</label> <input
-					name="Domicilio" id="Domicilio" class="form-control"
-					placeholder="Domicilio"  required type="text"> <label><br />
-						 Email</label> <input
-							name="Email" id="Email" class="form-control" placeholder="Email"  required type="email">
-								<br />
-
-Categoria</label>
-<select required name="Categoria">
- <option value="usuario">Padre/Madre/Tutor</option>
- <option value="admin">Administrador</option>
- <option value="docente">Docente</option>
-	</select>	
+						placeholder="Password"  required type="password"> .
+						
+						
+		
+					
 	<button class="btn btn-lg btn-primary btn-block"
 												type="submit">Agregar Usuario</button>
 	</form>
@@ -44,6 +45,6 @@ Categoria</label>
 	<form action="ServletsAdmin" method="post">
 		<input type="submit" value="Volver al menú" />
 	</form>
+	</body>
 </html>
-</body>
-</html>
+

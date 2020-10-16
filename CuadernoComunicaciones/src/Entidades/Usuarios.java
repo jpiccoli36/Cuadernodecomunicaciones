@@ -12,6 +12,10 @@ public class Usuarios implements Serializable{
 	String usuario;
 	int Categoria;
 	String Email;
+	int tipousuario;
+	
+	
+	
 	public String getDomicilio() {
 		return Domicilio;
 	}
@@ -19,7 +23,7 @@ public class Usuarios implements Serializable{
 		Domicilio = domicilio;
 	}
 	String contraseña;
-	String Estados;
+
 	String Domicilio;
 	
 	public String getEmail() {
@@ -29,12 +33,6 @@ public class Usuarios implements Serializable{
 		Email = email;
 	}	
 
-	public String getEstados() {
-		return Estados;
-	}
-	public void setEstados(String estados) {
-		Estados = estados;
-	}
 	
 	public int getCategoria() {
 		return Categoria;
@@ -69,6 +67,12 @@ public class Usuarios implements Serializable{
 	}
 	public String getDNI() {
 		return DNI;
+	}
+	public int getTipousuario() {
+		return tipousuario;
+	}
+	public void setTipousuario(int tipousuario) {
+		this.tipousuario = tipousuario;
 	}
 	public void setDNI(String dNI) {
 		DNI = dNI;

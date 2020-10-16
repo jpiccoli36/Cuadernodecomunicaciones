@@ -25,7 +25,7 @@ public class ControladorUsuario {
 
 	
 
-	public void AltaPersona(Usuarios p) throws SQLException, Exception {
+	public void AltaUsuario(Usuarios p) throws SQLException, Exception {
 		
 		du.AltaUsuario(p);
 

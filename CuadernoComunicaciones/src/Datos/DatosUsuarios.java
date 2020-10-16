@@ -8,22 +8,24 @@ import Entidades.Usuarios;
 
 public class DatosUsuarios {
 public void AltaUsuario(Usuarios u) throws SQLException,Exception {
-		int b = 0;
+		
 		java.sql.PreparedStatement stmt = null;
+		long dni=Long.parseLong(u.getDNI());
 
 	
 		try {
 			stmt = FactoryConexion.getInstancia().getConn().prepareStatement(
-					"insert  into usuarios(Dni,NombreUsuarios,ApellidoUsuarios,DomicilioUsuarios,Usuario,Contraseña,Email,Categoria) values  (?,?,?,?,?,?,?,?)  ",
+					"insert  into usuario(dni_usuario,nombre,apellido,domicilio,usuario,contraseña,mail,tipo_usuario) values  (?,?,?,?,?,?,?,?)  ",
 					PreparedStatement.RETURN_GENERATED_KEYS);
-			stmt.setString(1, u.getDNI());
+			stmt.setLong(1, dni);
 			stmt.setString(2, u.getNombre());
 			stmt.setString(3, u.getApellido());
 			stmt.setString(4, u.getDomicilio());	
 			stmt.setString(5, u.getUsuario());
 			stmt.setString(6, u.getContraseña());
 			stmt.setString(7, u.getEmail());
-			stmt.setInt(8, u.getCategoria());	
+			stmt.setInt(8, u.getTipousuario());
+			
 			stmt.executeUpdate();						
 		
 			stmt.close();
