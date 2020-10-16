@@ -30,13 +30,15 @@ public class ServletsConfirmarAltaAlumno extends HttpServlet {
 		String DNI=request.getParameter("DNI");
 		String Nombre=request.getParameter("Nombre");
 		String Apellido=request.getParameter("Apellido");		
+		String dnipadre= request.getParameter("DNIPADRE");
 		int curso=Integer.parseInt(request.getParameter("curso"));		
 		
 		Alumno al = new Alumno();
 		al.setApellido(Apellido);		
 		al.setDni(Long.parseLong(DNI));
 		al.setNombre(Nombre);
-		al.setNumero_curso(curso);	
+		al.setNumero_curso(curso);
+		al.setDnipadre(Long.parseLong(dnipadre));
 		ControladorAlumno ctrl= new ControladorAlumno();		
 		try{
 			ctrl.AltaAlumno(al);		

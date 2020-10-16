@@ -6,6 +6,13 @@ public class Alumno {
 	String apellido;
 	int numero_curso;
 	long dni;
+	long dnipadre;
+	public long getDnipadre() {
+		return dnipadre;
+	}
+	public void setDnipadre(long dnipadre) {
+		this.dnipadre = dnipadre;
+	}
 	public String getNombre() {
 		return nombre;
 	}

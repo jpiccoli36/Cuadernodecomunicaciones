@@ -20,6 +20,8 @@
 				placeholder="Apellido"  required type="text"> <label><br />
 				DNI</label> <input name="DNI" id="DNI" class="form-control"
 			placeholder="DNI"  required type="number"> <label><br /> 
+			DNI PADRE/MADRE/TUTOR</label> <input name="DNIPADRE" id="DNIPADRE" class="form-control"
+			placeholder="DNI PADRE/MADRE/TUTOR"  required type="number"> <label><br /> 
 				
 				
 				<label>Curso:</label>
