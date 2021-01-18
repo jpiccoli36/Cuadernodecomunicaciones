@@ -51,7 +51,7 @@ public class ServletsConfirmarAltaUsuario extends HttpServlet {
 		try{
 			ctrl.AltaUsuario(u);		
 		
-		request.getSession().setAttribute("user", u);			
+				
 		request.getRequestDispatcher("WEB-INF/Admin.jsp").forward(request, response);
 		}
 		catch(SQLException s){

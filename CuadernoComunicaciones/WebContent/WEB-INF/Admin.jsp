@@ -1,4 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@page import="Entidades.Usuarios"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Menu Admin</title>
@@ -48,6 +49,10 @@ ul, ol {
 </head>
 <body>
 <h1>Cuaderno de Comunicaciones </h1>
+<h2>
+	Bienvenido
+		<%=((Usuarios)session.getAttribute("user")).getNombre() %></h2>
+
 	<div id="header" style="width: 100%">
 		<ul class="nav">
 			<li><a> Usuarios</a>
@@ -64,10 +69,15 @@ ul, ol {
 								style="cursor: pointer; background-color: black; color: white; border-style: none; height: 30px; width: 200px; font-size: 12pt"
 								value="Alta Usuario" />
 						</form></li>
-					<li><form action="ServletsVerUsuarios" method="post">
+					<li><form action="ServletsBajaUsuario" method="post">
 							<input type="submit"
 								style="cursor: pointer; background-color: black; color: white; border-style: none; height: 30px; width: 200px; font-size: 12pt"
 								value="Eliminar Usuario" />
+						</form></li>
+						<li><form action="ServletsBajaAlumno" method="post">
+							<input type="submit"
+								style="cursor: pointer; background-color: black; color: white; border-style: none; height: 30px; width: 200px; font-size: 12pt"
+								value="Eliminar Alumno" />
 						</form></li>
 					<li><form action="ServletsConsultarUsuarios" method="post">
 							<input type="hidden" name="opcion" value="1"><input

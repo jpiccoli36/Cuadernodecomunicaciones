@@ -13,7 +13,7 @@ public class Login {
 	
 			try {
 
-				stmt =FactoryConexion.getInstancia().getConn().prepareStatement("select * from usuario where usuario=? and contraseña=? ");
+				stmt =FactoryConexion.getInstancia().getConn().prepareStatement("select * from usuario where usuario=? and contraseña=? and estado=1 ");
 			
 				stmt.setString(1,w.getUsuario());
 				stmt.setString(2, w.getContraseña());						

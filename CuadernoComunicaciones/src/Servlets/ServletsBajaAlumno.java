@@ -12,12 +12,12 @@ import Entidades.Usuarios;
 
 
 
-@WebServlet({ "/ServletsBajaUsuario", "/servletsbajausuario", "/servletbajausuario" })
-public class ServletsBajaUsuario extends HttpServlet {
+@WebServlet({ "/ServletsBajaAlumno", "/servletsbajaalumno", "/servletbajaalumno" })
+public class ServletsBajaAlumno extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
   
-    public ServletsBajaUsuario() {
+    public ServletsBajaAlumno() {
         super();
         
     }
@@ -30,7 +30,7 @@ public class ServletsBajaUsuario extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		
-		request.getRequestDispatcher("WEB-INF/BajaUsuario.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/BajaAlumno.jsp").forward(request, response);
 		
 	}
 	}

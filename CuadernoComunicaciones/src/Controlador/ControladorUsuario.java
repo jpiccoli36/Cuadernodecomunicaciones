@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import Datos.DatosAlumno;
 import Datos.DatosCursos;
 import Datos.DatosUsuarios;
 import Datos.Login;
@@ -15,12 +16,10 @@ import Entidades.Usuarios;
 public class ControladorUsuario {
 	private DatosUsuarios du;
 
-	Scanner w = new Scanner(System.in);
-	
-
 	public ControladorUsuario() {
 		
 		du = new DatosUsuarios();
+
 	}
 
 	
@@ -75,5 +74,20 @@ public class ControladorUsuario {
 		return dc.ConsultarTodosCursos();
 		
 	}
+
+
+
+	public Usuarios consultarclave(String pass, String usu) throws SQLException {
+		return du.consultarclave(pass,usu);
+		
+	}
+
+
+
+	public Usuarios consultaDatosBajaUsuario(String dNI) throws SQLException {
+		
+		return du.consultarDatosBajaUsuario(dNI);
+	}
+
 
 	}

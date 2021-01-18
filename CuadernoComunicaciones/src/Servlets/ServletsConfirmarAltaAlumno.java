@@ -35,15 +35,15 @@ public class ServletsConfirmarAltaAlumno extends HttpServlet {
 		
 		Alumno al = new Alumno();
 		al.setApellido(Apellido);		
-		al.setDni(Long.parseLong(DNI));
+		al.setDni(DNI);
 		al.setNombre(Nombre);
 		al.setNumero_curso(curso);
-		al.setDnipadre(Long.parseLong(dnipadre));
+		al.setDnipadre(dnipadre);
 		ControladorAlumno ctrl= new ControladorAlumno();		
 		try{
 			ctrl.AltaAlumno(al);		
 		
-		request.getSession().setAttribute("user", al);			
+				
 		request.getRequestDispatcher("WEB-INF/Admin.jsp").forward(request, response);
 		}
 		catch (Exception s) {

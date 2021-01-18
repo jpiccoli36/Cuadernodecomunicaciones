@@ -5,13 +5,13 @@ public class Alumno {
 	String nombre;
 	String apellido;
 	int numero_curso;
-	long dni;
-	long dnipadre;
-	public long getDnipadre() {
+	String dni;
+	String dnipadre;
+	public String getDnipadre() {
 		return dnipadre;
 	}
-	public void setDnipadre(long dnipadre) {
-		this.dnipadre = dnipadre;
+	public void setDnipadre(String string) {
+		this.dnipadre = string;
 	}
 	public String getNombre() {
 		return nombre;
@@ -31,11 +31,11 @@ public class Alumno {
 	public void setNumero_curso(int numero_curso) {
 		this.numero_curso = numero_curso;
 	}
-	public long getDni() {
+	public String getDni() {
 		return dni;
 	}
-	public void setDni(long dni) {
-		this.dni = dni;
+	public void setDni(String string) {
+		this.dni = string;
 	}
 
 }
