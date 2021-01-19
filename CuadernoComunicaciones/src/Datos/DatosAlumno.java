@@ -95,4 +95,22 @@ public class DatosAlumno {
 			}
 		
 	}
+
+	public void BajaAlumnoPorBajaPadre(String dNI) {
+		java.sql.PreparedStatement stmt = null;
+		try {
+			stmt = FactoryConexion.getInstancia().getConn().prepareStatement(
+					"DELETE FROM alumno  WHERE dni_padre=?");
+			
+			stmt.setInt(1,Integer.parseInt(dNI));
+		
+			stmt.executeUpdate();
+			
+			stmt.close();
+		} catch (SQLException e1) {
+
+			e1.printStackTrace();
+		}
+	
+}
 }

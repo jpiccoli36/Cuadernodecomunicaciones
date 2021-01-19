@@ -21,6 +21,16 @@
 				<label>Apellido: </label><label for="apellido" class="sr-only"><%=request.getAttribute("apellido") %></label> 
 				
 			<Br>
+				<label>Categoria </label><label for="Categoria" class="sr-only"><%=request.getAttribute("tipo") %></label> 
+				
+			<Br>
+			<%if(request.getAttribute("tipo").equals("PADRE/MADRE/TUTOR")){%>
+				
+				<Br>
+				<label>Dni Hijo/a: </label><label for="DNI Hijo" class="sr-only"><%=request.getAttribute("dnialumno") %></label> 
+				<Br>
+				<label>Nombre Hijo/a: </label><label for="Nombre Hijo" class="sr-only"><%=request.getAttribute("nombrealumno") %></label>
+				<%}%>
 			
 					<a href="ServletsFinalizarEliminacionUsuarios?dni=<%=request.getAttribute("dni") %>&nombre=<%=request.getAttribute("nombre") %>&apellido=<%=request.getAttribute("apellido") %>"><button>Confirmar</button></a>
 		

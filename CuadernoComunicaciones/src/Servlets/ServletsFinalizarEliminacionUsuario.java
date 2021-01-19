@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Controlador.ControladorAlumno;
 import Controlador.ControladorUsuario;
+import Entidades.Alumno;
 import Entidades.Usuarios;
 
 
@@ -29,12 +31,16 @@ public class ServletsFinalizarEliminacionUsuario extends HttpServlet {
 		String DNI=request.getParameter("dni");
 		
 		ControladorUsuario cu = new ControladorUsuario();	
+		ControladorAlumno ca = new ControladorAlumno();
 		
 			Usuarios u = new Usuarios();
+			Alumno al = new Alumno();
 		try {
 					
+		
 			u.setDNI(DNI);		
 			cu.BajaUsuario(u);
+			ca.BajaAlumnoPorBajaPadre(DNI);
 					
 			request.getRequestDispatcher("WEB-INF/Admin.jsp").forward(request, response);
 			}

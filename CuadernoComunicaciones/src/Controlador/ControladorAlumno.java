@@ -43,6 +43,11 @@ public class ControladorAlumno {
 	
 			da.BajaAlumno(al);
 		}
+
+	public void BajaAlumnoPorBajaPadre(String dNI) {
+		da.BajaAlumnoPorBajaPadre(dNI);
+		
+	}
 		
 	}
 

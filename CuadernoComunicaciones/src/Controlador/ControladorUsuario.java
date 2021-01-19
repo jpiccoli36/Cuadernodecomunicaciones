@@ -9,6 +9,7 @@ import Datos.DatosAlumno;
 import Datos.DatosCursos;
 import Datos.DatosUsuarios;
 import Datos.Login;
+import Entidades.Alumno;
 import Entidades.Cursos;
 import Entidades.Usuarios;
 
@@ -87,6 +88,13 @@ public class ControladorUsuario {
 	public Usuarios consultaDatosBajaUsuario(String dNI) throws SQLException {
 		
 		return du.consultarDatosBajaUsuario(dNI);
+	}
+
+
+	
+	public Alumno consultaDatosAlumnoBajaPadre(String dNI) throws SQLException {
+		
+		return du.consultaDatosAlumnoBajaPadre(dNI);
 	}
 
 

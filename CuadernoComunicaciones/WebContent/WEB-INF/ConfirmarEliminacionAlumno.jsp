@@ -20,9 +20,9 @@
 			<Br>
 				<label>Apellido: </label><label for="apellido" class="sr-only"><%=request.getAttribute("apellido") %></label> 
 				
-			<Br>
 			
-					<a href="ServletsFinalizarEliminacionAlumno?dni=<%=request.getAttribute("dni") %>&nombre=<%=request.getAttribute("nombre") %>&apellido=<%=request.getAttribute("apellido") %>"><button>Confirmar</button></a>
+			
+					<a href="ServletsFinalizarEliminacionAlumno?dni=<%=request.getAttribute("dni") %>&nombre=<%=request.getAttribute("nombre") %>&apellido=<%=request.getAttribute("apellido") %>"><button>Eliminar</button></a>
 		
 	
 

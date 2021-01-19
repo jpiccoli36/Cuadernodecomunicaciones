@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import Entidades.Alumno;
 import Entidades.Cursos;
 import Entidades.Usuarios;
 
@@ -114,6 +115,7 @@ public Usuarios consultarDatosBajaUsuario(String dNI) throws SQLException {
 				p.setDNI(rs.getString("dni_usuario"));
 				p.setApellido(rs.getString("apellido"));
 				p.setNombre(rs.getString("nombre"));
+				p.setCategoria(rs.getInt("tipo_usuario"));
 						
 				return p;
 				}
@@ -123,5 +125,35 @@ public Usuarios consultarDatosBajaUsuario(String dNI) throws SQLException {
 
 	
 	return p;
+}
+
+public Alumno consultaDatosAlumnoBajaPadre(String dNI) throws SQLException {
+	
+	java.sql.PreparedStatement stmt =null;
+	ResultSet rs = null;
+	Alumno al = new Alumno();
+
+		try {
+
+			stmt =FactoryConexion.getInstancia().getConn().prepareStatement("select * from alumno  where dni_padre=?   ");
+		
+			stmt.setString(1,dNI);
+							
+			rs=stmt.executeQuery();
+			
+			
+			if((rs.next())){
+							
+				al.setDni(rs.getString("dni_alumno"));				
+				al.setNombre(rs.getString("nombre"));
+						
+				return al;
+				}
+		} catch (SQLException e) {					
+		 throw	e=new SQLException("usuario o pass incorrectas");
+		}
+
+	
+	return al;
 }
 }
