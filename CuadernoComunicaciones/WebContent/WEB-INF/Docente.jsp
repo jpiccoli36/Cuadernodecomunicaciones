@@ -60,7 +60,7 @@ ul, ol {
 	<li><a>Comunicaciones</a>
 	<ul>
 	<li>
-	<form action="ServletsNuevaNotificacion" method="post">
+	<form action="ServletsNuevaNotificacionDocente" method="post">
 	<input type="hidden" name="opcion" value="1">
 		<input type="submit" style="cursor: pointer; background-color: black; color: white; border-style: none; height: 30px; width: 200px; font-size: 12pt"
 								 value="Nueva Notificacion" />

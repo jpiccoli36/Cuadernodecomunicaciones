@@ -97,5 +97,17 @@ public class ControladorUsuario {
 		return du.consultaDatosAlumnoBajaPadre(dNI);
 	}
 
+	public Usuarios ConsultarDNIDocente(String usu) throws SQLException {
+		
+		return du.ConsultarDNIDocente(usu);
+	}
+
+
+
+	public ArrayList<Integer> ConsultaTodosCursosDocente(Usuarios u) {
+	
+		return du.ConsulaTodosCursosDocentes(u);
+	}
+
 
 	}

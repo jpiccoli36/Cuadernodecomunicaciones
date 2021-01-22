@@ -44,9 +44,14 @@ public class ControladorAlumno {
 			da.BajaAlumno(al);
 		}
 
+
 	public void BajaAlumnoPorBajaPadre(String dNI) {
 		da.BajaAlumnoPorBajaPadre(dNI);
 		
+	}
+	public ArrayList<ArrayList<Usuarios>> ConsultaDatosAlumnosSegunNumeroCurso(ArrayList<Integer> cur) {
+		
+		return da.ConsultaDatosAlumnosSegunNumeroCurso(cur);
 	}
 		
 	}

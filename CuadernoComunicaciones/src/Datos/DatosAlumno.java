@@ -3,8 +3,11 @@ package Datos;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 
 import Entidades.Alumno;
+import Entidades.Cursos;
 import Entidades.Usuarios;
 
 public class DatosAlumno {
@@ -113,4 +116,57 @@ public class DatosAlumno {
 		}
 	
 }
+	public ArrayList<ArrayList<Usuarios>> ConsultaDatosAlumnosSegunNumeroCurso(ArrayList<Integer> cur) {
+		java.sql.PreparedStatement stmt =null;
+		java.sql.PreparedStatement stmt1 =null;
+		ResultSet rs = null;
+		ResultSet rs1 = null;
+		ArrayList<ArrayList<Usuarios>> al = new ArrayList();
+		ArrayList<Usuarios> user = new ArrayList<Usuarios>();
+		
+		for (int i = 0; i < cur.size(); i++) {			
+			try {	
+				System.out.println("este es el indice de ejecucion de for"+i);
+				System.out.println("estos son los cursos "+cur);
+				stmt =FactoryConexion.getInstancia().getConn().prepareStatement("select * from alumno where numero_curso=?");
+				stmt.setInt(1,cur.get(i));
+				rs=stmt.executeQuery();
+				if (rs != null) {					
+					while (rs.next()) {
+						System.out.println("este es el dni del padre"+rs.getString("dni_padre"));
+						Alumno alumno = new Alumno();
+						alumno.setDni(rs.getString("dni_padre"));
+						alumno.setNombre(rs.getString("nombre"));
+						alumno.setApellido(rs.getString("apellido"));						
+						stmt1 =FactoryConexion.getInstancia().getConn().prepareStatement("select * from usuario where dni_usuario=?");
+						stmt1.setInt(1,Integer.parseInt(alumno.getDni()));
+						rs1=stmt1.executeQuery();
+						while (rs1.next()) {
+							System.out.println("este es el mail del padre"+rs1.getString("mail"));
+						Usuarios u = new Usuarios();
+						u.setEmail(rs1.getString("mail"));
+						u.setNombre(alumno.getNombre());
+						u.setApellido(alumno.getApellido());
+						System.out.println("este seria el mail "+u.getEmail());
+						user.add(u);						
+						
+						}
+						System.out.println("aca estamos imprimiendo user"+user);
+						al.add(user);
+					}
+			
+		}				
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+			
+		
+	}
+		return al;
+		
+		
+	}
 }
