@@ -7,6 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import Entidades.Cursos;
+
 import Entidades.Usuarios;
 
 public class DatosUsuarios {
@@ -98,7 +99,7 @@ public Usuarios consultarDatosBajaUsuario(String dNI) throws SQLException {
 	
 	java.sql.PreparedStatement stmt =null;
 	ResultSet rs = null;
-	Usuarios p = new Usuarios();
+	Usuarios u = new Usuarios();
 
 		try {
 
@@ -111,17 +112,86 @@ public Usuarios consultarDatosBajaUsuario(String dNI) throws SQLException {
 			
 			if((rs.next())){
 							
-				p.setDNI(rs.getString("dni_usuario"));
-				p.setApellido(rs.getString("apellido"));
-				p.setNombre(rs.getString("nombre"));
+				u.setDNI(rs.getString("dni_usuario"));
+				u.setApellido(rs.getString("apellido"));
+				u.setNombre(rs.getString("nombre"));
 						
-				return p;
+				return u;
 				}
 		} catch (SQLException e) {					
 		 throw	e=new SQLException("usuario o pass incorrectas");
 		}
 
 	
-	return p;
+	return u;
+}
+
+public Usuarios ConsultarDNIDocente(String usu) throws SQLException {
+	java.sql.PreparedStatement stmt =null;
+	ResultSet rs = null;
+	Usuarios doc = new Usuarios();
+
+		try {
+
+			stmt =FactoryConexion.getInstancia().getConn().prepareStatement("select * from docente where usuario=?   ");
+		
+			stmt.setString(1,usu);
+							
+			rs=stmt.executeQuery();
+			
+			
+			if((rs.next())){
+							
+				doc.setDNI(rs.getString("dni_docente"));
+				doc.setApellido(rs.getString("apellido"));
+				doc.setNombre(rs.getString("nombre"));
+				doc.setEmail(rs.getString("mail"));
+						
+				return doc;
+				}
+		} catch (SQLException e) {					
+		 throw	e=new SQLException("usuario o pass incorrectas");
+		}
+
+	
+	return doc;
+	
+}
+
+public ArrayList<Cursos> ConsulaTodosCursosDocentes(Usuarios u) {
+	
+	ArrayList<Cursos> cursos = new ArrayList<Cursos>();
+	ResultSet rs = null;		
+	java.sql.PreparedStatement stmt = null;						
+	
+	try {
+		stmt = FactoryConexion.getInstancia().getConn()
+				.prepareStatement("select * from curso where dni_docente=?");
+		stmt.setObject(1, u.getDNI());
+		
+		rs = stmt.executeQuery();
+		if (rs != null) {
+			while (rs.next()) {
+				Cursos c = new Cursos();
+				c.setAño(Integer.parseInt(rs.getString("año")));
+				c.setDivision(rs.getString("division"));
+				c.setNumerocurso(Integer.parseInt(rs.getString("numero_curso")));
+				c.setTurno(rs.getString("turno"));
+				c.setDniDocente(rs.getString("dni_docente"));
+											
+				cursos.add(c);
+
+			}
+			rs.close();
+			stmt.close();
+		}
+
+	} catch (SQLException e) {
+
+		e.printStackTrace();
+	}
+	return cursos;
+
 }
 }
+

@@ -3,8 +3,11 @@ package Datos;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 
 import Entidades.Alumno;
+import Entidades.Cursos;
 import Entidades.Usuarios;
 
 public class DatosAlumno {
@@ -93,6 +96,59 @@ public class DatosAlumno {
 
 				e1.printStackTrace();
 			}
+		
+	}
+
+	public ArrayList<ArrayList<Usuarios>> ConsultaDatosAlumnosSegunNumeroCurso(ArrayList<Cursos> cur) {
+		java.sql.PreparedStatement stmt =null;
+		java.sql.PreparedStatement stmt1 =null;
+		ResultSet rs = null;
+		ResultSet rs1 = null;
+		ArrayList<ArrayList<Usuarios>> al = new ArrayList();
+		ArrayList<Usuarios> user = new ArrayList<Usuarios>();
+		
+		for (int i = 0; i < cur.size(); i++) {
+			
+			try {		
+				
+				stmt =FactoryConexion.getInstancia().getConn().prepareStatement("select * from alumno where numero_curso=?");
+				stmt.setInt(1,cur.get(i).getNumerocurso());
+				rs=stmt.executeQuery();
+				if (rs != null) {
+					while (rs.next()) {
+						Alumno alumno = new Alumno();
+						alumno.setDni(rs.getString("dni_padre"));
+						alumno.setNombre(rs.getString("nombre"));
+						alumno.setApellido(rs.getString("apellido"));
+						stmt1 =FactoryConexion.getInstancia().getConn().prepareStatement("select * from usuarios where dni_usuario=?");
+						stmt1.setInt(1,Integer.parseInt(alumno.getDni()));
+						rs1=stmt.executeQuery();
+						while (rs.next()) {
+						
+						Usuarios u = new Usuarios();
+						u.setEmail(rs.getString("mail"));
+						u.setNombre(alumno.getNombre());
+						u.setApellido(alumno.getApellido());
+						user.add(u);
+						
+						}
+						al.add(user);
+					}
+			
+		}	
+				
+			
+				rs.close();
+			stmt.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+		return al;
+	}
+		return al;
+		
 		
 	}
 }

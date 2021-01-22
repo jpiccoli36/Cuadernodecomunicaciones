@@ -30,6 +30,12 @@ public class Cursos {
 	public void setNumerocurso(int numerocurso) {
 		this.numerocurso = numerocurso;
 	}
-	
+	String DniDocente;
+	public String getDniDocente() {
+		return DniDocente;
+	}
+	public void setDniDocente(String dniDocente) {
+		DniDocente = dniDocente;
+	}
 	
 }

@@ -90,4 +90,18 @@ public class ControladorUsuario {
 	}
 
 
+
+	public Usuarios ConsultarDNIDocente(String usu) throws SQLException {
+		
+		return du.ConsultarDNIDocente(usu);
+	}
+
+
+
+	public ArrayList<Cursos> ConsultaTodosCursosDocente(Usuarios u) {
+	
+		return du.ConsulaTodosCursosDocentes(u);
+	}
+
+
 	}

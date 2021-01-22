@@ -43,6 +43,11 @@ public class ControladorAlumno {
 	
 			da.BajaAlumno(al);
 		}
+
+	public ArrayList<ArrayList<Usuarios>> ConsultaDatosAlumnosSegunNumeroCurso(ArrayList<Cursos> cur) {
+		
+		return da.ConsultaDatosAlumnosSegunNumeroCurso(cur);
+	}
 		
 	}
 
