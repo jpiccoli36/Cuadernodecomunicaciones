@@ -49,7 +49,7 @@ public class ControladorAlumno {
 		da.BajaAlumnoPorBajaPadre(dNI);
 		
 	}
-	public ArrayList<ArrayList<Usuarios>> ConsultaDatosAlumnosSegunNumeroCurso(ArrayList<Integer> cur) {
+	public ArrayList<Usuarios> ConsultaDatosAlumnosSegunNumeroCurso(ArrayList<Cursos> cur) {
 		
 		return da.ConsultaDatosAlumnosSegunNumeroCurso(cur);
 	}

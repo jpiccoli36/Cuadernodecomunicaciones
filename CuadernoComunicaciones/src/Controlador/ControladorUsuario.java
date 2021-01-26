@@ -104,7 +104,7 @@ public class ControladorUsuario {
 
 
 
-	public ArrayList<Integer> ConsultaTodosCursosDocente(Usuarios u) {
+	public ArrayList<Cursos> ConsultaTodosCursosDocente(Usuarios u) {
 	
 		return du.ConsulaTodosCursosDocentes(u);
 	}

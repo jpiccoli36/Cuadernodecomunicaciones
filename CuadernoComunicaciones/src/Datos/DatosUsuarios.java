@@ -163,9 +163,9 @@ public Usuarios ConsultarDNIDocente(String usu) throws SQLException {
 	
 }
 
-public ArrayList<Integer> ConsulaTodosCursosDocentes(Usuarios u) {
+public ArrayList<Cursos> ConsulaTodosCursosDocentes(Usuarios u) {
 	
-	ArrayList<Integer> cursos = new ArrayList<Integer>();
+	ArrayList<Cursos> cursos = new ArrayList<Cursos>();
 	ResultSet rs = null;		
 	java.sql.PreparedStatement stmt = null;						
 	
@@ -177,12 +177,12 @@ public ArrayList<Integer> ConsulaTodosCursosDocentes(Usuarios u) {
 		rs = stmt.executeQuery();
 		if (rs != null) {
 			while (rs.next()) {
-				int c=0;
-				//c.setAño(Integer.parseInt(rs.getString("año")));
-				//c.setDivision(rs.getString("division"));
-				c=(Integer.parseInt(rs.getString("numero_curso")));
-				//c.setTurno(rs.getString("turno"));
-				//c.setDniDocente(rs.getString("dni_docente"));
+				Cursos c = new Cursos();
+			c.setAño(Integer.parseInt(rs.getString("año")));
+				c.setDivision(rs.getString("division"));
+				c.setNumerocurso(Integer.parseInt(rs.getString("numero_curso")));
+				c.setTurno(rs.getString("turno"));
+				c.setDniDocente(rs.getString("dni_docente"));
 											
 				cursos.add(c);
 
