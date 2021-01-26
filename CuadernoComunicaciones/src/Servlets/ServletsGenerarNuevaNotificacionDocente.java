@@ -2,6 +2,8 @@ package Servlets;
 
 import java.io.File;
 import java.io.IOException;
+
+import javax.mail.Session;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -41,12 +43,13 @@ public class ServletsGenerarNuevaNotificacionDocente extends HttpServlet {
 		String email = (request.getParameter("curso"));
 		System.out.println(email);
 		String nota = (request.getParameter("nota"));
-		//String nombre = (request.getParameter(""))
-		//Blob archivo;
-		ControladorNotificaciones cn = new ControladorNotificaciones();
-		
+			ControladorNotificaciones cn = new ControladorNotificaciones();
+		String url=(request.getParameter("archivo"));
+
+		String usu=ServletsLogin.staticuser;
+	
 		//cn.GenerarNotificacion
-		Mails.getInstance().send(email,"Notificación para el Sr/a ",nota);
+		Mails.getInstance().send(email,"Notificación del señor/a "+usu,nota,url);
 		doGet(request, response);
 		
 		

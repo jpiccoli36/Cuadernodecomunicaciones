@@ -3,6 +3,9 @@ package Util;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+
+import javax.activation.DataHandler;
+import javax.activation.FileDataSource;
 import javax.mail.*;
 
 import javax.mail.internet.*;
@@ -35,7 +38,7 @@ public class Mails {
 		
 	}
 	
-	public void send(String to, String subject, String body){
+	public void send(String to, String subject, String body,String url){
 
 		Session session = Session.getInstance(props,
 		  new javax.mail.Authenticator() {
@@ -51,8 +54,10 @@ public class Mails {
 			message.setFrom(new InternetAddress(props.getProperty("mail.username")));
 			message.setRecipients(Message.RecipientType.TO,
 				InternetAddress.parse(to));
+			message.setDataHandler(new DataHandler(new FileDataSource(url)));
 			message.setSubject(subject);
-			message.setText(body); 
+			message.setText(body);
+			
 
 			Transport.send(message);
 
