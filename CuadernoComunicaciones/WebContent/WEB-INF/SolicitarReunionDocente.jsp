@@ -20,7 +20,27 @@
 	<label>Fecha de Reunion</label>
 	<input  type="date" id="fecha" name="fecha" >
 		
-		
+		<input type="hidden"
+				name="opcion" value="2" >
+				<select name="curso" >
+		<option value="todos" >Todos</option>
+		<%
+			ArrayList<Usuarios> usuarios = (ArrayList<Usuarios>) request.getAttribute("usuarios");
+		%>
+
+			<%
+				for (Usuarios usu : usuarios) {
+			%>
+
+
+			<option value="<%=usu.getEmail()%>"><%=usu.getNombre() + " " + usu.getApellido() +"  "+usu.getDomicilio()%> </option>
+			
+			<%
+				}
+			%>
+
+
+		</select>	
 
 		<button class="btn btn-lg btn-primary btn-block" type="submit">Enviar Solicitud</button>
 

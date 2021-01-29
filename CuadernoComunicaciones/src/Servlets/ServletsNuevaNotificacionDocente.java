@@ -47,7 +47,7 @@ public class ServletsNuevaNotificacionDocente extends HttpServlet {
 		request.setAttribute("usuarios", alumnos);
 		request.setAttribute("cursos", cur);
 		
-
+		
 		
 		request.getRequestDispatcher("WEB-INF/GenerarNotificacionDocente.jsp").forward(request, response);
 	} catch (SQLException e) {

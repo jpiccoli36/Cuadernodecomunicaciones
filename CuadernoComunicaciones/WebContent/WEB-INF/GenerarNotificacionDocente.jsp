@@ -37,7 +37,8 @@
 
 
 		</select>	
-		
+		<input type="hidden"
+				name="opcion" value="1" >
 		
 
 		<button class="btn btn-lg btn-primary btn-block" type="submit">Enviar
