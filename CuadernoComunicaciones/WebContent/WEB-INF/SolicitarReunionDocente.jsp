@@ -15,33 +15,14 @@
 		id="curso">
 		<label>Nota</label>
 		<textarea name="nota" rows="10" cols="50">Nota</textarea>
-		<br> <label for="archivo"> archivo:</label> <input type="file"
-			name="archivo" id="archivo" onselect="">		
-		<%
-			ArrayList<Usuarios> usuarios = (ArrayList<Usuarios>) request.getAttribute("usuarios");
-		%>
+	
 		
-		<select name="curso" >
-		<option value="todos" >Todos</option>
-
-			<%
-				for (Usuarios usu : usuarios) {
-			%>
-
-
-			<option value="<%=usu.getEmail()%>"><%=usu.getNombre() + " " + usu.getApellido() +"  "+usu.getDomicilio()%> </option>
-			
-			<%
-				}
-			%>
-
-
-		</select>	
+	<label>Fecha de Reunion</label>
+	<input  type="date" id="fecha" name="fecha" >
 		
 		
 
-		<button class="btn btn-lg btn-primary btn-block" type="submit">Enviar
-			Notificacion</button>
+		<button class="btn btn-lg btn-primary btn-block" type="submit">Enviar Solicitud</button>
 
 	</form>
 

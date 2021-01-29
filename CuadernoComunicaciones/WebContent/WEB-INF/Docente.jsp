@@ -61,15 +61,15 @@ ul, ol {
 	<ul>
 	<li>
 	<form action="ServletsNuevaNotificacionDocente" method="post">
-	<input type="hidden" name="opcion" value="1">
+	
 		<input type="submit" style="cursor: pointer; background-color: black; color: white; border-style: none; height: 30px; width: 200px; font-size: 12pt"
 								 value="Nueva Notificacion" />
 	</form>
 	</li>
 	<li>	
 
-	<form action="ServletsVerTipoElementos" method="post">
-							<input type="hidden" name="opcion" value="7">
+	<form action="ServletsSolicitarReunionDocente" method="post">
+							
 							<input
 								type="submit"
 								style="cursor: pointer; background-color: black; color: white; border-style: none; height: 30px; width: 200px; font-size: 12pt"

@@ -28,9 +28,13 @@ public class ServletsLogin extends HttpServlet {
 		Usuarios per = new Usuarios();
 		per.setContraseña(pass);
 		per.setUsuario(staticuser);
+		
 		ControladorUsuario ctrl = new ControladorUsuario();
 		try {		
 			per = ctrl.login(per);
+			
+			if(per.getEstado()==1)
+			{
 
 			if (per.getCategoria()==1) {
 
@@ -62,14 +66,19 @@ public class ServletsLogin extends HttpServlet {
 
 					
 			}
-
+			}
+			else{
+				request.setAttribute("error", "Usuario/Password Incorrecta O Usuario no habilitado");
+				request.setAttribute("url", "index.html");
+				request.getRequestDispatcher("WEB-INF/Error.jsp").forward(request, response);
+			}
 		} catch (java.sql.SQLException e) {
 			request.setAttribute("error", "Error en la conexion");
 			request.setAttribute("url", "index.html");
 			request.getRequestDispatcher("WEB-INF/Error.jsp").forward(request, response);
 		} catch (Exception k) {
 
-			request.setAttribute("error", "Usuario/Password Incorrecta o Usuario Inhabilitado");
+			request.setAttribute("error", "Usuario/Password Incorrecta");
 			request.setAttribute("url", "index.html");
 			request.getRequestDispatcher("WEB-INF/Error.jsp").forward(request, response);
 

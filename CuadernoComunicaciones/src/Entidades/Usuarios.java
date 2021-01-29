@@ -13,9 +13,17 @@ public class Usuarios implements Serializable{
 	int Categoria;
 	String Email;
 	int tipousuario;
+	int estado;
 	
 	
 	
+	
+	public int getEstado() {
+		return estado;
+	}
+	public void setEstado(int estado) {
+		this.estado = estado;
+	}
 	public String getDomicilio() {
 		return Domicilio;
 	}

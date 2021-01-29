@@ -41,7 +41,7 @@ public class ServletsGenerarNuevaNotificacionDocente extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String email = (request.getParameter("curso"));
-		System.out.println(email);
+		
 		String nota = (request.getParameter("nota"));
 			ControladorNotificaciones cn = new ControladorNotificaciones();
 		String url=(request.getParameter("archivo"));
@@ -49,6 +49,7 @@ public class ServletsGenerarNuevaNotificacionDocente extends HttpServlet {
 		String usu=ServletsLogin.staticuser;
 	
 		//cn.GenerarNotificacion
+		
 		Mails.getInstance().send(email,"Notificación del señor/a "+usu,nota,url);
 		doGet(request, response);
 		
