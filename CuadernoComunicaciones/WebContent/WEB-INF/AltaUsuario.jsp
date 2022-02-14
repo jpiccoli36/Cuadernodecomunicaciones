@@ -34,6 +34,17 @@
 					 Password</label> <input
 						name="Password" id="Password" class="form-control"
 						placeholder="Password"  required type="password"> .
+					<label>Tipo Usuario:</label>
+		
+	
+		<select name="tipousuario">
+
+				<option value="1">admin</option>
+				<option value="2">padre/madre/tutor</option>
+				<option value="3">docente</option>
+				
+>
+		</select>
 						
 						
 		

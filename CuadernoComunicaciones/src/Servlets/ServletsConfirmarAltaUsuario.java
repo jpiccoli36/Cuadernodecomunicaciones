@@ -32,7 +32,8 @@ public class ServletsConfirmarAltaUsuario extends HttpServlet {
 		String Usuario=request.getParameter("Usuario");
 		String Password=request.getParameter("Password");
 		String Domicilio=request.getParameter("Domicilio");
-		String Email=request.getParameter("Email");		
+		String Email=request.getParameter("Email");
+		int TipoUsuario=Integer.parseInt(request.getParameter("tipousuario"));
 		
 		
 	Usuarios u= new Usuarios(); 
@@ -44,7 +45,7 @@ public class ServletsConfirmarAltaUsuario extends HttpServlet {
 		u.setEmail(Email);
 		u.setUsuario(Usuario);
 		u.setDomicilio(Domicilio);
-		u.setTipousuario(2);
+		u.setTipousuario(TipoUsuario);
 		
 		ControladorUsuario ctrl= new ControladorUsuario();			
 
