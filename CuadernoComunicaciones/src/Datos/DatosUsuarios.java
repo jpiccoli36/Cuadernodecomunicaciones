@@ -228,5 +228,41 @@ public Alumno consultaDatosAlumnoBajaPadre(String dNI) throws SQLException {
 	
 	return al;
 }
+
+public void AltaDocente(Usuarios u, String curso) throws SQLException {
+	java.sql.PreparedStatement stmt = null;
+	long dni=Long.parseLong(u.getDNI());
+
+
+	try {
+		stmt = FactoryConexion.getInstancia().getConn().prepareStatement(
+				"insert  into usuario(dni_usuario,nombre,apellido,domicilio,usuario,contraseña,mail,tipo_usuario,estado) values  (?,?,?,?,?,?,?,?,?)  ",
+				PreparedStatement.RETURN_GENERATED_KEYS);
+		stmt.setLong(1, dni);
+		stmt.setString(2, u.getNombre());
+		stmt.setString(3, u.getApellido());
+		stmt.setString(4, u.getDomicilio());	
+		stmt.setString(5, u.getUsuario());
+		stmt.setString(6, u.getContraseña());
+		stmt.setString(7, u.getEmail());
+		stmt.setInt(8, u.getTipousuario());
+		stmt.setInt(9, 1);
+		//falta agregar en curso 
+		
+		stmt.executeUpdate();						
+	
+		stmt.close();
+
+	} catch (SQLException s) {
+		
+		throw s;
+	}
+	catch(Exception s){
+		
+		throw s;
+	}
+	
+	
+}
 }
 

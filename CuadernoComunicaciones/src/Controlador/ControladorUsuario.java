@@ -110,4 +110,11 @@ public class ControladorUsuario {
 	}
 
 
+
+	public void AltaDocente(Usuarios u, String curso) throws SQLException {
+		du.AltaDocente(u,curso);
+		
+	}
+
+
 	}

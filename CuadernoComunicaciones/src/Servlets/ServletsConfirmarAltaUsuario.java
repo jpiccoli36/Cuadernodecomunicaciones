@@ -34,7 +34,7 @@ public class ServletsConfirmarAltaUsuario extends HttpServlet {
 		String Domicilio=request.getParameter("Domicilio");
 		String Email=request.getParameter("Email");
 		int TipoUsuario=Integer.parseInt(request.getParameter("tipousuario"));
-		
+		String Curso= request.getParameter("curso");
 		
 	Usuarios u= new Usuarios(); 
 		
@@ -46,8 +46,21 @@ public class ServletsConfirmarAltaUsuario extends HttpServlet {
 		u.setUsuario(Usuario);
 		u.setDomicilio(Domicilio);
 		u.setTipousuario(TipoUsuario);
-		
+		if(TipoUsuario==3){
 			
+			ControladorUsuario ctrl= new ControladorUsuario();
+		
+			try {
+				ctrl.AltaDocente(u,Curso);
+			} catch (SQLException e) {
+				
+				e.printStackTrace();
+			} catch (Exception e) {
+				
+				e.printStackTrace();
+			}
+		}
+		else{	
 		
 		ControladorUsuario ctrl= new ControladorUsuario();			
 
@@ -70,7 +83,7 @@ public class ServletsConfirmarAltaUsuario extends HttpServlet {
 		}
 	}
 	}
-	
+}
 
 	
 
