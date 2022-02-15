@@ -46,7 +46,20 @@
 >
 		</select>
 						
-						
+								<label>Curso:</label>
+		<select name="curso">
+	<option value="null">Ninguno</option>
+			<%
+			ArrayList<Cursos>listaCur= (ArrayList<Cursos>)request.getAttribute("listaCursos");
+			for(Cursos c : listaCur){
+			%>
+				<option value="<%=c.getNumerocurso()%>">
+				<%=c.getAño()+" "+c.getDivision()+" "+c.getTurno() %></option>
+
+
+			<%
+				}
+			%>
 		
 					
 	<button class="btn btn-lg btn-primary btn-block"

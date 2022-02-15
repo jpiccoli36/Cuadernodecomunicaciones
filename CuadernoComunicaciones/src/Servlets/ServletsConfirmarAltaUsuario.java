@@ -47,6 +47,8 @@ public class ServletsConfirmarAltaUsuario extends HttpServlet {
 		u.setDomicilio(Domicilio);
 		u.setTipousuario(TipoUsuario);
 		
+			
+		
 		ControladorUsuario ctrl= new ControladorUsuario();			
 
 		try{
@@ -55,6 +57,7 @@ public class ServletsConfirmarAltaUsuario extends HttpServlet {
 				
 		request.getRequestDispatcher("WEB-INF/Admin.jsp").forward(request, response);
 		}
+		
 		catch(SQLException s){
 			request.setAttribute("error", "error al agregar el usuario");
 			request.setAttribute("url", "ServletsAdmin");
@@ -66,7 +69,9 @@ public class ServletsConfirmarAltaUsuario extends HttpServlet {
 			request.getRequestDispatcher("WEB-INF/Error.jsp").forward(request, response);
 		}
 	}
+	}
+	
 
 	
 
-}
+
