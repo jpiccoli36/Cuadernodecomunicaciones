@@ -60,15 +60,15 @@
 			<%
 				}
 			%>
+			</select>
 		
 					
 	<button class="btn btn-lg btn-primary btn-block"
-												type="submit">Agregar Usuario</button>
+	type="submit">Agregar Usuario</button>
+	
 	</form>
 	<br />
-	<form action="ServletsAdmin" method="post">
-		<input type="submit" value="Volver al menú" />
-	</form>
+	<input type="button" onclick="history.back()" name="volver atrás" value="Cancelar">
 	</body>
 </html>
 

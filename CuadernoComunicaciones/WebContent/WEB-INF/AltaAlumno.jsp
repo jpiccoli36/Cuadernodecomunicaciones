@@ -41,8 +41,7 @@
 		</select>
 		
 		<button class="btn btn-lg btn-primary btn-block"   type="submit" >Alta Alumno </button>
-				
-		
+<input type="button" onclick="history.back()" name="volver atrás" value="Cancelar">		
 	</form>
 			
 		</body>

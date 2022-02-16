@@ -28,11 +28,12 @@
 		
 					
 	<button class="btn btn-lg btn-primary btn-block"
+			
+			
 												type="submit">Baja Usuario</button>
-	</form>
-	<br />
-	<form action="ServletsLogin" method="post">
-		<input type="submit" value="Volver al menú" />
+						</input>	</form>
+<input type="button" onclick="history.back()" name="volver atrás" value="volver atrás">	<br />
+
 	</form>
 	</body>
 </html>
